@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-end">
+  <%= link_to 'back', restaurants_path, class:"btn btn-warning m-2 text-decoration-none col-3"%>
+</div>
+
+<div class="card-body">
+  <h1 class="card-title "><%= @restaurant.name %></h1>
+  <h3 class="card-subtitle mb-4 text-muted"><%= @restaurant.address %></h3>
+  <h3 class="card-text"><%= @restaurant.category %></h3>
+</div>
+
+<%= link_to 'Edit this restaurant', edit_restaurant_path(@restaurant), class:"btn btn-info m-2 text-decoration-none col-4" %>
+<br/>

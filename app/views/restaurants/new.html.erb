@@ -1,0 +1,19 @@
+<div class="mx-auto">
+  <h1 class="m-5 p-2 d-flex justify-content-between">New Restaurant 📋 <%= link_to 'back', restaurants_path, class:"btn btn-warning text-decoration-none col-3 mt-2"%></h1>
+
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-group m-5">
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.input :category, collection: Restaurant::CATEGORIES %>
+    </div>
+
+    <div class="form-group m-5 my-5">
+      <%= f.button :submit, class: 'btn btn-info col-12' %>
+    </div>
+  <% end %>
+</div>

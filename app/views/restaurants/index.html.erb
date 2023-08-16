@@ -1,0 +1,11 @@
+<div class="mx-auto">
+  <h1 class="m-2 p-2">List of Restaurants 👨🏽‍🍳</h1>
+
+  <ul class="list-group list-group-flush">
+    <% @restaurants.each do |restaurant| %>
+      <li class="m-2 col-6 p-2 list-group-item"><%= link_to restaurant.name, restaurant_path(restaurant), class:"text-decoration-none" %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Add a new restaurant', new_restaurant_path, class:"btn btn-warning m-2 text-decoration-none col-6"%>
+</div>
